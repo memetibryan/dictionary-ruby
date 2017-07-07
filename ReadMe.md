@@ -2,7 +2,7 @@
 The sole purpose of this project was to Make two classes: one for Word, and one for Definition. The homepage of the app should list out all of the words, and let you click on them to view all of their definitions. A user should be able to add a word, and when viewing a word, be able to add one or more definitions.
 
 ## Setup (Developers)
-If by any chhance you need this code, fork it to your local and run **$ bundle** to install all the gems. And also make sure you have ruby setup in you local machine.
+If by any chance you need this code, fork it to your local and run **$ bundle** to install all the gems. And also make sure you have ruby setup in you local machine.
 
 ## Setup
 In order try out the website,the users should make sure that he/she has the following:-
