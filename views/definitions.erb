@@ -3,6 +3,6 @@
   <h3>Here are the definitions on this lot: </h3>
   <ul>
   <% @definitions.each() do |definition| %>
-    <li><a href="/definitions/<%= definition.id() %>"><%= definition.model() %></a></li>
+    <li><a href="/definitions/<%= definition.id() %>"><%= definition.name() %></a></li>
   <% end %>
   </ul>
