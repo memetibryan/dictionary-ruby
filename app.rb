@@ -31,7 +31,7 @@ require('sinatra')
 
   get('/words/:id') do
     @word = Word.find(params.fetch('id').to_i())
-    erb(:word)
+    erb(:words)
   end
 
   get('/words/:id/definitions/new') do
@@ -40,8 +40,8 @@ require('sinatra')
   end
 
   post('/definitions') do
-    year = params.fetch('year')
-    @word = Definition.new(year)
+    name = params.fetch('name')
+    @word = Definition.new(name)
     @word.save()
     @word = Word.find(params.fetch('word_id').to_i())
     @word.add_word(@word)

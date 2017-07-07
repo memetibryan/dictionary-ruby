@@ -63,7 +63,7 @@ require('rspec')
   describe('#add_definition') do
       it("adds a new definition to a word") do
         test_word = Word.new("Bob's Used Cars")
-        test_definition = Definition.new(2000)
+        test_definition = Definition.new("hello")
         test_word.add_definition(test_definition)
         expect(test_word.define()).to(eq([test_definition]))
       end

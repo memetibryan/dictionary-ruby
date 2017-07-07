@@ -1,7 +1,10 @@
-<h3>Here are all the definitions in this word:</h3>
+<h3>Here are all the Words in this dictionary:</h3>
 
   <ul>
-    <% @word %>
+    <% @word.define().each() do |defy| %>
+      <li><a href="/definitions/<%= defy.id() %>"><%= defy.name() %></a></li>
+    <% end %>
   </ul>
 
+  <a href="/words/<%= @word.id%>/definitions/new">Add a new definition</a>
   <a href="/">Return to Main Page</a>
