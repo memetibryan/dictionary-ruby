@@ -31,12 +31,12 @@ require('sinatra')
   post('/definitions') do
     name = params.fetch('name')
     Definition.new(name).save()
-    @def = Definition.all()
-    erb(:success)
+    @words = Definition.all()
+    erb(:definitions)
   end
 
   get('/definitions/:id') do
-    @word = Definition.find(params.fetch('id').to_i())
+    @words = Definition.find(params.fetch('id').to_i())
     erb(:words)
   end
 
@@ -45,7 +45,7 @@ require('sinatra')
     erb(:words)
   end
 
-  get('/words/:id/definitions/new') do
+  get('/words/:id/definitions') do
       @word = Word.find(params.fetch('id').to_i())
       erb(:word_definitions_form)
   end
