@@ -1,7 +1,7 @@
 class Word
     @@words = []
 
-    attr_reader(:name, :id)
+    attr_reader(:name, :id, :define)
 
     define_method(:initialize) do |name|
       @name = name
@@ -11,10 +11,6 @@ class Word
 
     define_singleton_method(:all) do
       @@words
-    end
-
-    define_method(:define) do
-      @define
     end
 
     define_method(:save) do

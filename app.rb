@@ -44,6 +44,6 @@ require('sinatra')
     @definition = Definition.new(name)
     @definition.save()
     @word = Word.find(params.fetch('word_id').to_i())
-    @word.add_word(@word)
+    @word.add_definition(@definition)
     erb(:success)
   end
