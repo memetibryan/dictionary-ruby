@@ -24,6 +24,17 @@ require('sinatra')
     erb(:success)
   end
 
+  get('/definitions/new') do
+    erb(:definitions_form)
+  end
+
+  post('/definitions') do
+    name = params.fetch('name')
+    Definition.new(name).save()
+    @def = Definition.all()
+    erb(:success)
+  end
+
   get('/definitions/:id') do
     @word = Definition.find(params.fetch('id').to_i())
     erb(:words)
