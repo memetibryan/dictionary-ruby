@@ -26,7 +26,7 @@ require('sinatra')
 
   get('/definitions/:id') do
     @word = Definition.find(params.fetch('id').to_i())
-    erb(:word)
+    erb(:words)
   end
 
   get('/words/:id') do
