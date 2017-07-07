@@ -1,14 +1,9 @@
 <h3>Here are all the Words in this dictionary:</h3>
 
   <ul>
-    <% @word.define().each() do |defy| %>
-      <li><a href="/definitions/<%= defy.id() %>"><%= defy.name() %></a></li>
+    <% @words.each() do |word| %>
+      <li><a href="/words/<%= word.id() %>"><%= word.name %></a></li>
     <% end %>
   </ul>
 
-
-<ul>
-	<ol><a href="/words/<%= @word.id%>/definitions/new">Add a new definition</a></ol>
-	<ol><a href="/">Return to Main Page</a></ol>
-</ul>  
   
