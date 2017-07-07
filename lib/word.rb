@@ -13,7 +13,7 @@ class Word
       @@words
     end
 
-    define_singleton_method(:define) do
+    define_method(:define) do
       @define
     end
 
