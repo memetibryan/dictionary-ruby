@@ -41,8 +41,8 @@ require('sinatra')
 
   post('/definitions') do
     name = params.fetch('name')
-    @word = Definition.new(name)
-    @word.save()
+    @definition = Definition.new(name)
+    @definition.save()
     @word = Word.find(params.fetch('word_id').to_i())
     @word.add_word(@word)
     erb(:success)
