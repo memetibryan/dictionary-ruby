@@ -2,7 +2,7 @@
 
   <ul>
     <% @words.each() do |word| %>
-      <li><a href="/words/<%= word.id() %>"><%= word.name %></a></li>
+      <li><a href="/definitions/<%= word.id() %>"><%= word.name %></a></li>
     <% end %>
   </ul>
 

@@ -9,7 +9,7 @@ class Definition
     end
 
     define_singleton_method(:all) do
-      return @@definitions
+      @@definitions
     end
 
     define_method(:save) do
