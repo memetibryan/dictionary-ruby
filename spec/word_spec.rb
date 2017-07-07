@@ -1,71 +1,71 @@
 require('rspec')
-  require('dealership')
-  require('vehicle')
+  require('word')
+  require('definition')
 
-  describe(Dealership) do
+  describe(Word) do
     before() do
-      Dealership.clear()
+      Word.clear()
     end
 
     describe('#name') do
-      it("returns the name of the dealership") do
-        test_dealership = Dealership.new("Bob's Used Cars")
-        expect(test_dealership.name()).to(eq("Bob's Used Cars"))
+      it("returns the name of the word") do
+        test_word = Word.new("Bob's Used Cars")
+        expect(test_word.name()).to(eq("Bob's Used Cars"))
       end
     end
 
     describe('#id') do
-      it("returns the id of the dealership") do
-        test_dealership = Dealership.new("Bob's Used Cars")
-        expect(test_dealership.id()).to(eq(1))
+      it("returns the id of the word") do
+        test_word = Word.new("Bob's Used Cars")
+        expect(test_word.id()).to(eq(1))
       end
     end
 
-    describe('#cars') do
-      it("initially returns an empty array of cars for the dealership") do
-        test_dealership = Dealership.new("Bob's Used Cars")
-        expect(test_dealership.cars()).to(eq([]))
+    describe('#define') do
+      it("initially returns an empty array of define for the word") do
+        test_word = Word.new("Bob's Used Cars")
+        expect(test_word.define()).to(eq([]))
       end
     end
 
     describe("#save") do
-      it("adds a dealership to the array of saved dealerships") do
-        test_dealership = Dealership.new("Bob's Used Cars")
-        test_dealership.save()
-        expect(Dealership.all()).to(eq([test_dealership]))
+      it("adds a word to the array of saved words") do
+        test_word = Word.new("Bob's Used Cars")
+        test_word.save()
+        expect(Word.all()).to(eq([test_word]))
       end
     end
 
     describe(".all") do
       it("is empty at first") do
-        expect(Dealership.all()).to(eq([]))
+        expect(Word.all()).to(eq([]))
       end
     end
 
     describe(".clear") do
-      it("empties out all of the saved dealerships") do
-        Dealership.new("Bob's Used Cars").save()
-        Dealership.clear()
-        expect(Dealership.all()).to(eq([]))
+      it("empties out all of the saved words") do
+        Word.new("Bob's Used Cars").save()
+        Word.clear()
+        expect(Word.all()).to(eq([]))
       end
     end
 
     describe(".find") do
-      it("returns a dealership by its id number") do
-        test_dealership = Dealership.new("Bob's Used Cars")
-        test_dealership.save()
-        test_dealership2 = Dealership.new("Jane's Cars")
-        test_dealership2.save()
-        expect(Dealership.find(test_dealership.id())).to(eq(test_dealership))
+      it("returns a word by its id number") do
+        test_word = Word.new("Bob's Used Cars")
+        test_word.save()
+        test_word2 = Word.new("Jane's Cars")
+        test_word2.save()
+        expect(Word.find(test_word.id())).to(eq(test_word))
       end
     end
   
-  describe('#add_vehicle') do
-      it("adds a new vehicle to a dealership") do
-        test_dealership = Dealership.new("Bob's Used Cars")
-        test_vehicle = Vehicle.new("Toyota", "Prius", 2000)
-        test_dealership.add_vehicle(test_vehicle)
-        expect(test_dealership.cars()).to(eq([test_vehicle]))
+  describe('#add_definition') do
+      it("adds a new definition to a word") do
+        test_word = Word.new("Bob's Used Cars")
+        test_definition = Definition.new(2000)
+        test_word.add_definition(test_definition)
+        expect(test_word.define()).to(eq([test_definition]))
       end
     end
 end

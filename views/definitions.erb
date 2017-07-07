@@ -1,8 +1,8 @@
-<h1>Vehicles</h1>
+<h1>Definitions</h1>
 
-  <h3>Here are the vehicles on this lot: </h3>
+  <h3>Here are the definitions on this lot: </h3>
   <ul>
-  <% @vehicles.each() do |vehicle| %>
-    <li><a href="/vehicles/<%= vehicle.id() %>"><%= vehicle.model() %></a></li>
+  <% @definitions.each() do |definition| %>
+    <li><a href="/definitions/<%= definition.id() %>"><%= definition.model() %></a></li>
   <% end %>
   </ul>
