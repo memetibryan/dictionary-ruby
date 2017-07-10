@@ -3,7 +3,5 @@
   <h3>Here are the definitions in the dictionary: </h3>
 
   <ul>
-     <% @definitions.each() do |defy| %>
-      <li><a href="/definitions/<%= defy.id() %>"><%= defy.name %></a></li>
-    <% end %>
+     <%= @definitions.name %>      
   </ul>
