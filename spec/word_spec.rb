@@ -24,7 +24,7 @@ require('rspec')
     describe('#define') do
       it("initially returns an empty array of define for the word") do
         test_word = Word.new("Bob's Used Cars")
-        expect(test_word.define()).to(eq([]))
+        expect(test_word.define()).==([])
       end
     end
 
@@ -65,7 +65,7 @@ require('rspec')
         test_word = Word.new("Bob's Used Cars")
         test_definition = Definition.new("hello")
         test_word.add_definition(test_definition)
-        expect(test_word.define()).to(eq([test_definition]))
+        expect(test_word.define()).==([test_definition])
       end
     end
 end
