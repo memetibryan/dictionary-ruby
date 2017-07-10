@@ -37,7 +37,7 @@ require('sinatra')
     definition = params.fetch('name')
     Definition.new(definition).save()
     @definitions = Definition.all()
-    erb(:success)
+    erb(:success_2)
   end
 
   get('/definitions/:id') do
